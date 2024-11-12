@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Erreur 400</title>
+    <style>
+        @keyframes glitch-animation {
+            0%, 20%, 100% {
+                transform: scale(1);
+            }
+            10%, 30% {
+                transform: scale(1.1) rotate(-2deg);
+            }
+            40%, 60% {
+                transform: scale(1.1) rotate(2deg);
+            }
+            50%, 70% {
+                transform: scale(1.1) rotate(-2deg);
+            }
+            80% {
+                transform: scale(1.1) rotate(2deg);
+            }
+        }
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            position: relative;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: top 0.5s ease-out, opacity 0.5s ease-out;
+            cursor: pointer;
+            color: aliceblue;
+        }
+        body {
+            background-image: url(https://steamuserimages-a.akamaihd.net/ugc/795367639705096911/14153CF1FA04C993A89C504543F9C9133814BB63/?imw=637&imh=358&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true);
+            background-attachment: fixed;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var title = document.querySelector('h1');
+            
+            title.onclick = function() {
+                title.style.top = '100%';
+                title.style.opacity = '0';
+            };
+        });
+    </script>
+</head>
+<body>
+    <a href="http://localhost:8080/INDEX.html">Accéder à la page d'accueil</a>
+    <form action="" method="post"></form>
+    <h1>Erreur 400 - Bad Request</h1>
+    <!-- Votre contenu HTML personnalisé ici -->
+</body>
+</html>

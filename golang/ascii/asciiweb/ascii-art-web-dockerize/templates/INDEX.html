@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <link rel="icon" href="https://pics.computerbase.de/2/6/0/8/2/logo-256.png">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ascii-web</title>
+    <style>
+        body {
+            background-image: url(https://media.tenor.com/RWJlrcyxAvgAAAAd/makiplays-retrowave.gif);
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+            width: 90%;
+            height: 100%;
+        }
+
+        h1 {
+            font-style: oblique;
+            text-align: center;
+            font-size: 60px;
+        }
+
+        p {
+            font-size: 20px;
+            color: rgb(255, 255, 255);
+        }
+
+        pre {
+            font-size: 100%;
+            color: rgb(251, 154, 51);
+        }
+
+        .gradient-title {
+            background-image: linear-gradient(to right, #e5ff00 10%, #ff00ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .text-input {
+            width: 200px;
+            height: 60px;
+            transition: transform 0.3s ease;
+        }
+
+        .bold-result {
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        .text-input:focus {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="gradient-title">ascii-web<br>stylize</h1>
+    <p>On peut réaliser de l'art ASCII avec un simple éditeur de texte à l'aide d'une police de caractères à chasse
+        fixe (par exemple : Courrier New), mais il existe des logiciels automatisant le processus, à l'aide
+        d'algorithmes de conversion d'image en texte. Évidemment ces images, si elles sont faites à la main,
+        demandent beaucoup de temps et de talent, d'où le terme « art ».</p>
+
+    <form action="" method="post">
+        <textarea name="str" cols="30" rows="3" class="text-input"></textarea>
+        <select name="banner">
+            <option value="standard">Standard</option>
+            <option value="shadow">Shadow</option>
+            <option value="thinkertoy">Thinkertoy</option>
+        </select>
+        <button type="submit">Envoyer</button>
+    </form>
+    <div>
+
+    </div>
+    <pre class="bold-result">{{.Result}}</pre>
+</body>
+
+</html>

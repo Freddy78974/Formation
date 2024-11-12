@@ -1,0 +1,117 @@
+/* Style de base */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f2f2f2;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* En-tête */
+.header {
+    background-color: #4a69bd;
+    color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Barre de navigation */
+.navbar {
+    display: flex;
+    justify-content: center;
+    background-color: #6a89cc;
+    padding: 10px 0;
+}
+
+.navbar a {
+    color: #ffffff;
+    padding: 10px 20px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.navbar a:hover {
+    background-color: #82ccdd;
+}
+
+/* Conteneur principal */
+.container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Panneau d'annonce */
+.announcement {
+    background-color: #82ccdd;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    color: #ffffff;
+    font-size: 18px;
+}
+
+/* Section des catégories */
+.category-list {
+    list-style: none;
+    padding: 0;
+}
+
+.category-item {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.category-title {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+/* Pied de page */
+.footer {
+    background-color: #4a69bd;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 20px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+    }
+
+    .navbar a {
+        text-align: center;
+        padding: 10px;
+    }
+}
+
+/* Style pour le bouton 'Voir mes Likes et Dislikes' */
+form button[type="submit"] {
+    background-color: #60a3bc; /* Couleur de fond */
+    color: white; /* Couleur du texte */
+    border: none; /* Pas de bordure */
+    padding: 10px 25px; /* Padding intérieur */
+    margin-top: 10px; /* Marge au-dessus du bouton */
+    border-radius: 5px; /* Bords arrondis */
+    cursor: pointer; /* Curseur en forme de main */
+    transition: background-color 0.3s, transform 0.2s; /* Effet de transition au survol */
+    font-size: 16px; /* Taille de la police */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Ombre légère pour un effet en 3D */
+}
+
+form button[type="submit"]:hover {
+    background-color: #3c6382; /* Changement de couleur au survol */
+    transform: scale(1.05); /* Légère augmentation de la taille au survol */
+}

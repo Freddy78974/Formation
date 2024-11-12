@@ -1,0 +1,6 @@
+cree la data base en executant cette commande dans le terminal "sqlite3 forum.db < datadb.sql"
+(bien se diriger a l'aide de la comande "cd" au terminal dans le dossier sql)
+
+
+ SELECT * FROM Utilisateurs;
+ DELETE FROM Utilisateurs;

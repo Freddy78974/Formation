@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Forum</title>
+  <link rel="stylesheet" href="/static/css/forum.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="container">
+    <h1>Bienvenue sur le Forum de Mon Projet</h1>
+  </div>
+</header>
+
+<nav class="navbar">
+  <div class="container">
+    <a href="/">Accueil</a>
+    {{ if not .Session.Authenticated }}
+    <a href="/signup">Inscription</a>
+    <a href="/login">Connection</a>
+    {{end}}
+    {{ if .Session.Authenticated }}
+    <a>Utilisateur : {{ .Session.Username }}</a>
+    <a href="/logout">Deconnection</a>
+    <form action="/filtered-content" method="get">
+      <button type="submit">Voir mes Likes et Dislikes</button>
+  </form>  
+    {{end}}
+    <!-- Ajoutez ici d'autres liens si nécessaire -->
+  </div>
+</nav>
+
+<main>
+  <div class="container">
+    <section class="announcement">
+      <h2>Introduction au forum</h2>
+      <p>Ce forum est un espace de discussion où les utilisateurs peuvent échanger sur différents sujets.</p>
+    </section>
+
+     <!-- Section pour soumettre un nouveau post -->
+     {{ if .Session.Authenticated }}
+     <section class="post-submission">
+      <h2>Publier un nouveau sujet</h2>
+      <form action="/publish-post" method="post">
+        <div class="form-group">
+          <p>Choisissez une catégorie</p>
+          {{ range .Categories }}
+          <input class="chk" type="checkbox" name="category[]" value={{.Title}}>
+                        <label>{{.Title}}</label>
+          {{ end }}
+        </div>
+        <br>
+        <div class="form-group">
+          <label for="title">Titre du sujet</label>
+          <input type="text" id="title" name="title" required>
+        </div>
+        <div class="form-group">
+          <label for="content">Contenu du sujet</label>
+          <textarea id="content" name="content" required></textarea>
+        </div>
+        <div class="form-group">
+          <button type="submit">Publier</button>
+        </div>
+      </form>
+    </section>
+    {{end}}
+
+    <section class="category-list">
+      <h2>Dernières discussions</h2>
+      <div class="category-item">
+        {{ range .Posts }}
+        <h3 class="category-title">{{ .Title }} par {{ .User_name }} </h3>
+        <p class="category-title">Catégorie :{{ .Categories }} </p>
+        <p>{{ .Date }}</p>
+        <p>{{ .Text }}</p>
+        <a href="/post?id={{ .Link }}">Voir la discussion</a><br>
+        <form action="/like_dislike_forum" method="post">
+          <button type="submit" class="like" name="like" value="{{ .Link }}">Like</button>{{ len .Likes }}  
+          <button type="submit" class="dislike" name="dislike" value="{{ .Link }}">Dislike</button> {{ len .Dislikes }}  
+        </form>
+
+        {{ end }}
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<aside>
+  <div class="container">
+    <!-- Cette section peut contenir des informations supplémentaires ou des liens utiles -->
+    <h3>Informations complémentaires</h3>
+    <p>Des détails supplémentaires sur le forum ou des annonces.</p>
+  </div>
+</aside>
+
+<footer class="footer">
+  <div class="container">
+    <p>© 2023 Mon Projet Forum. Tous droits réservés.</p>
+  </div>
+</footer>
+
+</body>
+</html>

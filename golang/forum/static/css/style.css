@@ -1,0 +1,98 @@
+/* Réinitialisation de certains styles par défaut */
+body, h1, form, button {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Style général de la page */
+body {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #666;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box; /* Assurez-vous que padding ne déforme pas la largeur */
+}
+
+/* Style du bouton */
+button {
+    color: aliceblue;
+    background: linear-gradient(225deg,#27d86c 0% , #26caf8 50%, #c625d0 100%);
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    width: 100%;
+    cursor: pointer;
+    font-size: 16px; 
+    overflow: hidden;
+    box-shadow: 0px -0px 0px 0px rgba(143, 64, 248, .5),0px 0px 0px 0px rgba(39,200, 255, .5);
+    transition: all .5s;
+    position: relative;
+}
+button::after{
+    content: "";
+    background-color: linear-gradient(225deg,#27d86c 0% , #26caf8 50%, #c625d0 100%);
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    top: 500px;
+   left: 790px;
+   z-index: -1;
+   transition: all .2s;
+}
+
+button:hover::after{
+    transform: rotate(150deg);
+}
+
+button:hover {
+transform: translate(0, -3px);
+box-shadow: 10px -10px 25px 0 rgba(143, 64, 248, .25), -10px 10px 25px 0px rgba(39, 200, 255, .25);
+}
+/* Style des liens */
+a {
+    color: #5c6bc0;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Petits ajustements pour les espacements */
+p {
+    text-align: center;
+    margin-top: 20px;
+}

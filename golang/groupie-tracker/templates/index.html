@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste des Artistes</title>
+    <style>
+        h1 {
+            font-size: 3rem;
+            margin: 0;
+            text-align: center;
+            color: antiquewhite;
+        }
+        body {
+            background-image: url('https://cdn-elle.ladmedia.fr/var/plain_site/storage/images/loisirs/sorties/news/fete-de-la-musique-2023-que-faire-a-paris-4134669/99055960-1-fre-FR/Fete-de-la-musique-2023-que-faire-a-Paris.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        #artist-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 20px;
+        }
+        .artist {
+            width: 30%;
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 10px;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+    </style>
+</head>
+<body>
+    <h1>Liste des artistes</h1>
+    <div id="artist-container">
+        {{ range . }}
+        <div class="artist">
+            <img src="{{ .Image }}" alt="{{ .Name }}" style="max-width: 100%;">
+            <h2>{{ .Name }}</h2>
+            <p>Année de début: {{ .StartYear }}</p>
+            <p>Premier album: {{ .FirstAlbum }}</p>
+            <p>Membres du groupe: {{ range .Members }}{{ . }}{{ end }}</p>
+        </div>
+        {{ end }}
+    </div>
+</body>
+</html>
