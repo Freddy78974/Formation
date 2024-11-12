@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sortable</title>
+  </head>
+  <body>
+    <label for="pageSize">Page Size:</label>
+    <select id="NumberdisplayHeros">
+      <option value="10">10</option>
+      <option value="20" selected>20</option>
+      <option value="50">50</option>
+      <option value="100">100</option>
+      <option value="all">All Results</option>
+    </select>
+    <label for="search">Recherche :</label>
+    <input type="text" id="search" oninput="loadData()" />
+    <style>
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+      th,
+      td {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: left;
+      }
+      th {
+        background-color: #f2f2f2;
+      }
+      th {
+        cursor: pointer;
+      }
+      .image-column {
+        width: 100px; /* Vous pouvez ajuster la largeur ici selon vos besoins */
+      }
+    </style>
+    <script src="sortable.js"></script>
+    <div id="table-container"></div>
+  </body>
+</html>
